@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "menu":"/components/menu/menu"
+  },
+  "navigationBarTitleText": "日视图"
+}

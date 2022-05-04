@@ -1,0 +1,32 @@
+/* components/menu/menu.wxss */
+/*通用的侧边栏菜单*/
+.option-container{
+  color:black;
+  padding: 30rpx 0 30rpx 0;
+  border-bottom: 1px solid #eee; 
+  text-align: center;
+}
+
+.menu{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+}
+
+.menu-upper{
+  position: fixed;
+  background-color: #fff;
+  height: 100%;
+  width: 60%;
+}
+
+.menu-cover{
+  position: relative;
+  left: 60%;
+  background-color: gray;
+  height: 100%;
+  width: 140%;
+  z-index: 100;
+  opacity: 0.5;
+}

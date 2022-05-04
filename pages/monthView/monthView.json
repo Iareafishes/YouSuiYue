@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "menu":"../../components/menu/menu"
+    
+  },
+  "navigationBarTitleText": "月视图"
+}

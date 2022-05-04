@@ -1,0 +1,32 @@
+<!--pages/calendar/calendar.wxml-->
+<menu id="menu"></menu>
+<view>
+    <view class ="menu-btn" bindtap="showMenu">
+        <image class="btn-image" src="/image/1.png" ></image>
+    </view>
+    <text class="date-text">{{year}}年{{month+1}}月{{day}}日</text>
+    <view class ="menu-btn" style="left: 60px;" bindtap="showNotice">
+        <image class="btn-image" src="/image/2.png" ></image>
+    </view>
+</view>
+
+<view class='container'>
+    <view class='card_wrap' bindtouchstart="touchstart" bindtouchend="touchend">
+        <!--前一页显示-->
+        <view hidden = "{{slidePrior == false}}" class = "card_item_1" animation="{{animationDataPrior}}">
+            <image src="{{priorImage}}"  lazy-load="true"></image>
+        </view>
+        <!--本页显示-->
+        <view class = "card_item_2" animation="{{animationDataNext}}">
+            <image src="{{currentImage}}"  lazy-load="true"></image>
+        </view>
+        <!--遮挡层，防止图片切换延时的闪烁-->
+        <view class = "card_item_2" hidden="{{coverImage == false}}" style="z-index: 100;">
+                <image src="{{nextImage}}"  lazy-load="true"></image>
+        </view>
+        <!--后一页显示-->
+        <view hidden = "{{slideNext == false}}" class = "card_item_3" >
+            <image src="{{nextImage}}"  lazy-load="true"></image>
+        </view>
+    </view>
+</view>

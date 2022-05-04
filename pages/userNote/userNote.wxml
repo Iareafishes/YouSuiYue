@@ -1,0 +1,16 @@
+<!--pages/userNote/userNote.wxml-->
+<menu id="menu"></menu>
+<view>
+    <view class ="menu-btn" style="left: 20px;" bindtap="showMenu">
+        <image src="/image/1.png" style="width: 30px; height: 30px;"></image>
+    </view>
+    <text class="title-text">我的记事</text>
+</view>
+<view class = "info-container">
+  <view hidden="{{showWarning}}">
+    <text class="warning-text">你还没有记下点什么哦，点击左上角菜单返回月视图记点东西再来看看吧！</text>
+  </view>
+  <view class = "info-box"  wx:for="{{noteInfoArray}}" data-noteInfo="{{noteInfo}}" wx:for-item="noteInfo" bindtap="editNote">
+    {{noteInfo.date}} {{noteInfo.note}}
+  </view>
+</view>

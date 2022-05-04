@@ -1,0 +1,47 @@
+<menu id="menu"></menu>
+<!-- 日历表盘 -->
+<view style="border-bottom: 1px solid #22A7F6; ">
+    <view>
+        <view class='date-show'>
+            <view class = "menu-btn" bindtap = "showMenu">
+                <image src="/image/1.png" ></image>
+            </view>
+            <view class='lt-arrow' bindtap='toLastMonth'>
+                <image src="/image/3.png" ></image>
+            </view>
+            {{year}}年{{month + 1}}月
+            <view class='rt-arrow' bindtap='toNextMonth'>
+                <image src="/image/4.png" ></image>
+            </view>
+        </view>
+    </view>
+    <view class='header'>
+        <view wx:for='{{weekDays}}' class='weekMark'>{{item}}<view></view></view> 
+    </view>
+    <view class='date-box'>
+        <view wx:for='{{dateArr}}'  data-date='{{item}}' bindtap="toSelectPage" style="{{item.month == month + 1? 'color : black' : 'color : lightgray'}}">
+            <view class='date-head'>
+                <view wx:if="{{item.dateWeight == 2}}">
+                    <view class="nowDay">{{item.day}}</view>
+                </view>
+                <view wx:elif="{{item.dateWeight == 1}}">
+                    <view class="selectDay">{{item.day}}</view>
+                </view>
+                <view wx:else="{{item.dateWeight == 0}}">
+                    <view>{{item.day}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+
+<!--信息显示-->
+<view style="border-top: 1px solid #22A7F6;">
+    <view class = "info-box">{{year}}年{{month+1}}月{{day}}日  星期{{weekDays[weekDayNum]}}</view>
+    <view class = "info-box" hidden="{{!messageText}}">今日事件: {{messageText}}</view>
+    <view class = "info-box" hidden="{{!userNoteToShow}}">我的记事: {{userNoteToShow}}</view>
+    <view class = "info-box" bindtap = "callModal">
+        <text wx:if="{{userNoteToShow}}">点击编辑记事</text>
+        <text wx:if="{{!userNoteToShow}}">点击添加记事</text>
+    </view>
+</view>

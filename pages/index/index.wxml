@@ -1,0 +1,11 @@
+<!--pages/index/index.wxml-->
+<image class = "bg" src = "/image/background.png" mode="aspectFit"></image>
+<view class = "center_btn">
+  <button bindtap="toDayView" plain="true">日视图</button>
+  <button bindtap="toMonthView" plain="true">月视图</button>
+  <button bindtap="toUserNote" plain="true">管理已有记事</button>
+  <button bindtap="showHelp" plain="true">打开帮助</button>
+</view>
+
+
+

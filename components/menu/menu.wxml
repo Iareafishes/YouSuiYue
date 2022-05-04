@@ -1,0 +1,25 @@
+<!--components/menu/menu.wxml-->
+<!--打开菜单-->
+<view class="menu" animation="{{menuAnimation}}" hidden="{{!isMenuVisible}}">
+    <view class = "menu-upper" >
+        <view class = "option-container" bindtap="callMenu">
+            关闭菜单
+        </view>
+        <view class = "option-container" bindtap="showHelp">
+            打开帮助
+        </view>
+            <navigator class = "option-container" url="/pages/index/index?date={{year}}-{{month+1}}-{{day}}" >
+                回到主页
+            </navigator>
+            <navigator class = "option-container" url="/pages/dayView/dayView?date={{year}}-{{month+1}}-{{day}}" >
+                日视图（图册）
+            </navigator>
+            <navigator class = "option-container" url="/pages/monthView/monthView?date={{year}}-{{month+1}}-{{day}}" >
+                月视图
+            </navigator>
+            <navigator class = "option-container" url="/pages/userNote/userNote?date={{year}}-{{month+1}}-{{day}}" >
+                管理记事
+            </navigator>
+        </view>
+    <view class = "menu-cover"></view>
+</view>
